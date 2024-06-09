@@ -4,8 +4,11 @@ require 'zeitwerk'
 require 'danger'
 
 module Threat
+  module_function
+
+  def loader
+    @loader ||= Zeitwerk::Loader.for_gem
+  end
 end
 
-loader = Zeitwerk::Loader.for_gem
-loader.setup
-loader.eager_load_namespace(Threat::Plugins) # This way we're autoloading all defined plugins for Danger to register
+Threat.loader.setup
