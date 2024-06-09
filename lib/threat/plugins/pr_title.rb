@@ -17,8 +17,8 @@ class Threat::Plugins::PrTitle < Danger::Plugin
   PR_TITLE_REGEX = /\[#{JIRA_TICKET_NUMBER_FORMAT}\] [A-Z|0-9].*\S/ # [KEY-123] An amazing feature
 
   def run!
-    # Danger does not define github object when running locally
-    return unless defined?(github)
+    # This check is available for pull requests only
+    return unless env.pr?
 
     failure('Invalid format of PR title') unless github.pr_title.strip.match?(PR_TITLE_REGEX)
   end
