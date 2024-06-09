@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Threat::Plugins::PrTitle < Danger::Plugin
+class Threat::Plugins::Todo < Danger::Plugin
   SUPPORTED_COMMENTS = [
     '#', # e.g Ruby/YAML/Dockerfile and so on
     '//' # e.g JS
