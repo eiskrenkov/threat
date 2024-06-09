@@ -1,5 +1,20 @@
 # frozen_string_literal: true
 
+# This plugin searches for TODO comments in the codebase
+#
+# TODO: May be improved by posting different messages for cases when TODO was just introduced in current diff and when
+# contributor just touched a file with existing TODO
+#
+# Usage:
+#
+# Dangerfile
+#
+# ```ruby
+# danger.import_dangerfile(gem: 'threat')
+#
+# todo.run!
+# ```
+#
 class Threat::Plugins::Todo < Danger::Plugin
   SUPPORTED_COMMENTS = [
     '#', # e.g Ruby/YAML/Dockerfile and so on
