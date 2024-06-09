@@ -1,0 +1,16 @@
+AllCops:
+  TargetRubyVersion: 3.0
+
+Style/Documentation:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Naming/FileName:
+  Exclude:
+    - Dangerfile
